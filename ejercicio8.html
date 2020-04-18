@@ -6,11 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" id="a" />
+    <div>
+        <input type="text" id="a" />
+        <input type="button" id="operar" value="operar"/>
 
-<button id="operar">
-    Operar
-</button>
+
+    </div>
+    
+    <div>
+
+        <input type="text" id="b" >
+    </div>
+    <div>
+        <input type="text" id="c" >
+    </div>
+   
 
 </body>
 <script>
@@ -22,14 +32,17 @@ function Cubo(a, callback){
 }
 document.querySelector("#operar").addEventListener('click', function(){
     var a = parseInt(document.querySelector("#a").value);
-        
-
+    var b = document.querySelector("#b");
+    var c = document.querySelector("#c");
     Cuadrado(a, function(r){
-        console.log(a+' al cuadrado es ' + r);
-        
+        //console.log(a+' al cuadrado es ' + r);
+        //document.writeln(a+' al cuadrado es '+r);
+        b.value = a+' al cuadrado es ' + r;
     });
     Cubo(a, function(r){
-        console.log(a+' al cubo es ' + r);
+        //console.log(a+' al cubo es ' + r);
+        //document.writeln(a+' al cubo es '+r);
+        c.value = a+' al cubo es ' + r;
     })
 });
 </script>
