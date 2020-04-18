@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="a" />
+
+<button id="operar">
+    Operar
+</button>
+
+</body>
+<script>
+    function Cuadrado(a, callback){
+    return callback(Math.pow(a,2));
+}
+function Cubo(a, callback){
+    return callback(Math.pow(a,3));
+}
+document.querySelector("#operar").addEventListener('click', function(){
+    var a = parseInt(document.querySelector("#a").value);
+        
+
+    Cuadrado(a, function(r){
+        console.log(a+' al cuadrado es ' + r);
+        
+    });
+    Cubo(a, function(r){
+        console.log(a+' al cubo es ' + r);
+    })
+});
+</script>
+</html>
